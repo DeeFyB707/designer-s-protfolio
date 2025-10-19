@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: monts;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+
+/* Navigation */
+
+
+.brand {
+    font-family: monts;
+    font-size: 24px;
+    font-weight: 800;
+    color: crimson !important;
+}
+
+.navLists li {
+    font-family: roboto;
+    font-weight: 700;
+    font-size: 15px;
+    color: darkgray;
+    text-decoration: none;
+    transition: 0.6s linear !important;
+}
+
+.navLists li :hover {
+    color: rgba(0, 0, 0, 0.216);
+}
+
+.navButton {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: monts;
+    transition: 0.6s;
+}
+
+.callGif {
+    width: 30px;
+    height: 30px;
+    transform: scaleX(-1);
+    transform-origin: center;
+    display: inline-block;
+}
+
+.callBox {
+    visibility: hidden;
+    top: 0;
+    right: 0;
+}
+
+.navButton:hover {
+    color: #32CE78 !important;
+}
+
+.navButton:hover .callBox {
+    visibility: visible;
+    right: -29px;
+}
+
+
+
+
+
+/* Hero Section */
+
+
+.header {
+    text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  color: #dcdcdc; /* ტექსტის ძირითადი ფერი */
+  background: linear-gradient(90deg, #bfbfbf, #ffffff, #bfbfbf);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 6s ease-in-out infinite;
+  overflow: hidden;
+}
+
+/* სინათლის ზოლი — ბზინვა მხოლოდ ტექსტზე */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 100%
+  );
+  -webkit-background-clip: text;
+  animation: textShine 6s ease-in-out infinite;
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
